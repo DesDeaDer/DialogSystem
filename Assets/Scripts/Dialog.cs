@@ -21,8 +21,15 @@ public class Dialog : MonoBehaviour
     private void ShowCharacterName(CharacterData data, DialogCharacter character)
     {
         _nameCharacterObject.SetActive(true);
-        _nameCharacterObject.transform.position = character.NamePositiion;
+        _nameCharacterObject.transform.position = GetNamePositiion(character);
         _nameCharacterText.text = _providerTexts[data.NameID];
+    }
+
+    private Vector3 GetNamePositiion(DialogCharacter character)
+    {
+        var result = character.NamePositiion;
+        result.y = _nameCharacterObject.transform.position.y;
+        return result;
     }
 
     private void HideCharacterName()
