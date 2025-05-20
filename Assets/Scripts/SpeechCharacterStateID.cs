@@ -1,5 +1,4 @@
-﻿public enum SpeechCharacterStateID
-{
+﻿public enum SpeechCharacterStateID {
     Active,
     Passive
 }
