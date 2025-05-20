@@ -16,9 +16,9 @@ public class DialogCharacter : MonoBehaviour {
         => gameObject.SetActive(true);
 
     public void SetState(SpeechCharacterStateID stateID) {
-        if (stateID == SpeechCharacterStateID.Active:
+        if (stateID == SpeechCharacterStateID.Active)
             SetStateActive();
-        if (stateID == SpeechCharacterStateID.Passive:
+        if (stateID == SpeechCharacterStateID.Passive)
             SetStatePassive();
     }
 
