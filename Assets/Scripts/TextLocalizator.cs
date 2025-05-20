@@ -1,49 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TextLocalizator_", menuName = "Create/Data/Text localizator")]
-public class TextLocalizator : ScriptableObject
-{
-
+public class TextLocalizator : ScriptableObject {
     [SerializeField] private Data[] _data;
 
     [Serializable]
-    private struct Data
-    {
+    struct Data {
         [SerializeField] private TextID _id;
         [SerializeField] private string _text;
 
-        public TextID ID
-        {
-            get
-            {
-                return _id;
-            }
-        }
-
-        public string Text
-        {
-            get
-            {
-                return _text;
-            }
-        }
+        public TextID ID => _id;
+        public string Text => _text;
     }
 
     public string this[TextID id]
-    {
-        get
-        {
-            foreach (var item in _data)
-            {
-                if (item.ID == id)
-                {
-                    return item.Text;
-                }
-            }
-
-            throw new ArgumentException();
-        }
-    }
+        => _data.First(d => d.ID == id);
 }

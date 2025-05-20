@@ -1,5 +1,4 @@
-﻿public enum TextID
-{
+﻿public enum TextID {
     None,
 
     Speech_1,

@@ -1,5 +1,4 @@
-﻿public enum DialogCharacterID
-{
+﻿public enum DialogCharacterID {
     Actor,
     Artist,
     ActorDisappoint,
